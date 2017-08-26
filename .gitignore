@@ -1,6 +1,10 @@
 build
+dist
 venv
+JSONAutoArray.egg-info
 *.pyc
 *.swp
 .env
+MANIFEST*
+NOTES*
 tests/*.json
