@@ -12,7 +12,13 @@ Objects successfully sent to the writer are always contained in an array. JSONAu
 
 Suppose you are making with the ETL, and are pulling objects from a janky stream. Should your stream close prematurely, or send you some sort of madness, JSONAutoArray will throw out the bad object, and close the array before closing the file. 
 
-Usage:
+## Installation
+Install using pip:
+```bash
+pip install JSONAutoArray
+```
+
+## Usage
 ```python
 import random
 from json_autoarray import JSONAutoArray
