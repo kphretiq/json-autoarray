@@ -1,6 +1,6 @@
 # json_autoarray
 
-Stream JSON-serializable python objects as JSON array in file.
+Write JSON-serializable python objects to file as JSON array.
 
 Raises a SerializationError if you send it an object that cannot be serialized by whatever json module you are using..
         
