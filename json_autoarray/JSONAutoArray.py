@@ -21,7 +21,6 @@ initialize with file object or filename
 """
 
 import sys
-import warnings
 from io import IOBase
 
 try:

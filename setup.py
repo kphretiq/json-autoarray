@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name="JSONAutoArray",
-    version="0.5",
+    version="0.6",
     description="Write self-closing array to JSON file",
     long_description="conveniently write json-serializable python objects to an array in a file",
     author="pathetiq kphretiq",
