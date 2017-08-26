@@ -21,7 +21,7 @@ if __name__ == "__main__":
                         ]
                 }
             },
-            set(["a","a","b"]),
+            list(set(["a","a","b"])),
             list(range(3)),
     ]
 
@@ -57,7 +57,6 @@ if __name__ == "__main__":
 
     # close array on StopIteration error
     def rando_gen():
-        yield set([1,1,1,1,1])
         for i in range(100):
             yield {
                     "".join([chr(random.randint(1,100)) for i in range(5)]): \
