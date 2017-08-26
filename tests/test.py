@@ -26,30 +26,30 @@ if __name__ == "__main__":
     ]
 
     f = "foo.json"
-    with JSONAutoArray.ArrayWriter(f) as jstream:
+    with JSONAutoArray.ArrayWriter(f) as writer:
         for obj in objects:
-            jstream.write(obj)
+            writer.write(obj)
 
     # will fail in python3 if file opened as binary!
     f = open("bar.json", "w")
-    with JSONAutoArray.ArrayWriter(f) as jstream:
+    with JSONAutoArray.ArrayWriter(f) as writer:
         for obj in objects:
-            jstream.write(obj)
+            writer.write(obj)
 
     # expect empty array
     f = "bat.json"
-    with JSONAutoArray.ArrayWriter(f) as jstream:
+    with JSONAutoArray.ArrayWriter(f) as writer:
         try:
-            jstream.write(lambda x: "foo")
+            writer.write(lambda x: "foo")
         except JSONAutoArray.SerializationError as error:
             print(error)
 
     # write ten thousand random flabberdabs
     f = "baz.json"
-    with JSONAutoArray.ArrayWriter(f) as jstream:
+    with JSONAutoArray.ArrayWriter(f) as writer:
         try:
             for i in range(10000):
-                jstream.write([
+                writer.write([
                         {"flabberdab": random.randint(1, 1000)}
                     ])
         except JSONAutoArray.SerializationError as error:
@@ -64,14 +64,14 @@ if __name__ == "__main__":
                             random.randint(1,100)}
     
     print("expect uncaught StopIteration")
-    with JSONAutoArray.ArrayWriter(open("quux.json", "w")) as jstream:
+    with JSONAutoArray.ArrayWriter(open("quux.json", "w")) as writer:
         try:
             rg = rando_gen()
             while True:
                 if sys.version_info[0] < 3:
-                    jstream.write(rg.next())
+                    writer.write(rg.next())
                 else:
-                    jstream.write(next(rg))
+                    writer.write(next(rg))
         except JSONAutoArray.SerializationError as error:
             print(error)
 
