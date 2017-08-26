@@ -7,5 +7,5 @@ setup(name="JSONAutoArray",
       description="conveniently write json-serializable python objects to an array in a file",
       author="doug shawhan",
       author_email="doug.shawhan@gmail.com",
-      packages=["JSONAutoArray"],
+      packages=["json_autoarray"],
      )
